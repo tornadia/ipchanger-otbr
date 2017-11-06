@@ -1,0 +1,43 @@
+[QUOTE="Elwyn, post: 2228701, member: 205470"]This IPChanger works for any version of Tibia
+
+Download: https://github.com/gugahoa/ipchanger-otbr/archive/master.zip
+Repository: https://github.com/gugahoa/ipchanger-otbr
+
+How to use:
+(You need to have Python3.4)
+
+First you need to install pip https://pip.pypa.io/en/latest/installing.html
+Instructions:
+[spoiler]Download: https://bootstrap.pypa.io/get-pip.py
+After downloading get-pip.py, go to the folder where it is and run:
+[code]
+$ sudo python3.4 get-pip.py
+$ sudo pip3.4 install python-ptrace
+[/code]
+[/spoiler]
+
+Then you have to run the following commands so that the IPChanger can attach to the Tibia process:
+[code]$ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope[/code]
+
+If you don't want to run the commands above, edit /etc/sysctl.d/10-ptrace.conf and change:
+[code]
+kernel.yama.ptrace_scope = 1
+[/code]
+To
+[code]
+kernel.yama.ptrace_scope = 0
+[/code]
+
+Then you just need to go to where you extracted the ipchanger and execute main.py:
+[code]
+./main.py
+[/code][/QUOTE]
+
+
+[QUOTE="Elwyn, post: 2228745, member: 205470"]Just noticed a mistake, and I can't edit the thread, strange.
+
+The mistake was:
+If you don't want to run the commands above, edit /etc/sysctl.d/10-ptrace.conf and change:
+
+I should have written:
+If you don't want to run the commands above every time you restart the pc, edit /etc/sysctl.d/10-ptrace.conf and change:[/QUOTE]
